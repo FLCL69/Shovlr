@@ -14,6 +14,22 @@ $(document).ready( function(e)
         var Street = $('#Street').val();
         var City = $('#City').val();
         var Zip = $('#Zip').val();
+        
+        var MissingData = "";
+
+        if (FName == "") {MissingData = MissingData.concat("First Name\n");}
+        if (LName == "") {MissingData = MissingData.concat("Last Name\n");}
+        if (Phone == "") {MissingData = MissingData.concat("Phone\n");}
+        if (AreaSize == "") {MissingData = MissingData.concat("Area Size\n");}
+        if (Street == "") {MissingData = MissingData.concat("Street\n");}
+        if (City == "choose city") {MissingData = MissingData.concat("City\n");}
+        if (Zip == "") {MissingData = MissingData.concat("Zip\n");}
+
+        if(MissingData != ""){
+            alert("Please fill in the following to contiune: \n\n" + MissingData);
+            return false;
+        } 
+        
     });
 
     $.ajax
