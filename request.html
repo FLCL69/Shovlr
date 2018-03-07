@@ -27,9 +27,15 @@
         Last name:<br>
         <input type="text" id="LName" name="LName" value=""><br>
         Contact phone:<br>
-        <input type="text" id="Phone" name="Phone" value=""><br>
+        <input type="text" id="Phone" name="Phone" value=""
+        pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$"
+        oninvalid="setCustomValidity('Invalid Input. Please use the format: (401)-555-5555 or 401-555-5555 or 401 555 5555')"
+        onchange="try{setCustomValidity('')}catch(e){}"><br>
         Size of area to be shoveled (in sq ft):<br>
-        <input type="text" id="AreaSize" name="AreaSize" value=""><br>
+        <input type="text" id="AreaSize" name="AreaSize" value=""
+        pattern = "^[\d]+$"
+        oninvalid="setCustomValidity('Invalid Input. Please enter a number of 1 or more digits')"
+        onchange="try{setCustomValidity('')}catch(e){}"><br>
         Location of Area to be shoveled<br>
         Street:<br>
         <input type="text" id="Street" name="Street" value="">
@@ -78,7 +84,10 @@
         </select>
         <br>
         ZIP:<br>
-        <input type="text" id="Zip" name="Zip" value=""><br>
+        <input type="text" id="Zip" name="Zip" value=""
+        pattern="^\d{5}(?:[-\s]\d{4})?$"
+        oninvalid="setCustomValidity('Invalid Input. Please use the format: 01234 or 01234-5678 or 01234 5678')"
+        onchange="try{setCustomValidity('')}catch(e){}"><br>
         Need plow truck?<br>
         <input type="radio" name="yes"> Yes <br>
         <input type="radio" name="no"> No <br>
